@@ -17,5 +17,5 @@
 - Python
 - Docker (скоро)
 
-## Multi-remote test
--testing
+## Multi-remote testing
+-weqwe
