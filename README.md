@@ -16,3 +16,6 @@
 - Git / GitHub
 - Python
 - Docker (скоро)
+
+## Multi-remote test
+-testing
