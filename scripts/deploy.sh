@@ -22,7 +22,7 @@ if [[ ! -f "${LOCAL_DIR}index.html" ]]; then
 fi
 
 # Проверка 5: незафиксированные изменения
-if [[ -n "$(git status --porcelain | grep -v 'site/')" ]]; then
+if [[ -n "$(git status --porcelain)" ]]; then
     echo "Ошибка: в репозитории есть незафиксированные изменения." >&2
     exit 1
 fi
