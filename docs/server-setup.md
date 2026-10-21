@@ -45,6 +45,15 @@
 - 02-keys-configured — после настройки ключей
 - 03-ssh-hardened — после hardening SSH
 
+## 8. Веб-сервер
+- Устанавливаемый пакет: `nginx`
+- Путь к конфигурации ресурса: `/etc/nginx/sites-available/devops-site`
+- Каталог ресурса: `/var/www/devops-site`, владелец `devops`, права `755` для каталога и `644` для файлов.
+- Пути к сертификату и ключу: `/etc/ssl/certs/devops.crt` (права `644`), `/etc/ssl/private/devops.key` (права `600`, владелец `root`).
+- Команда формирования сертификата: 
+`sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/devops.key -out /etc/ssl/certs/devops.crt -subj "/CN=devops.local" -addext "subjectAltName=DNS:devops.local"`
+- Срок действия сертификата: 365 дней.
+
 ## 9. Контейнеризация
 - Способ установки Docker Engine: из официального репозитория Docker (docker-ce), версия 29.9.1.
 - Участники группы docker: пользователь devops.
@@ -53,3 +62,6 @@
 - Публикуемые порты: `127.0.0.1:5000` (только для локального доступа).
 - Именованные тома: `app_db_data` (для хранения данных PostgreSQL).
 - Конфигурация обратного прокси-сервера: Nginx, директивы `location /app/` (proxy_pass на `127.0.0.1:5000`).
+
+
+
