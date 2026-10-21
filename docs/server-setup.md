@@ -53,3 +53,15 @@
 - Команда формирования сертификата: 
 `sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/devops.key -out /etc/ssl/certs/devops.crt -subj "/CN=devops.local" -addext "subjectAltName=DNS:devops.local"`
 - Срок действия сертификата: 365 дней.
+
+## 9. Контейнеризация
+- Способ установки Docker Engine: из официального репозитория Docker (docker-ce), версия 29.9.1.
+- Участники группы docker: пользователь devops.
+- Расположение проекта на сервере: `/home/devops/app`.
+- Расположение файла .env: `/home/devops/app/.env`, права `600`, владелец devops.
+- Публикуемые порты: `127.0.0.1:5000` (только для локального доступа).
+- Именованные тома: `app_db_data` (для хранения данных PostgreSQL).
+- Конфигурация обратного прокси-сервера: Nginx, директивы `location /app/` (proxy_pass на `127.0.0.1:5000`).
+
+
+
