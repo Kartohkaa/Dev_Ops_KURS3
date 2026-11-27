@@ -1,0 +1,6 @@
+---
+app_image: "ghcr.io/kartohkaa/devops-ci-app"
+app_tag: "4ccb29b2f70bd937772cd5c8ae0d725a39d4ee63"
+app_container_name: "devops-ci-app"
+app_host_port: 5000
+app_internal_port: 5000
